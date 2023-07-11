@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,8 +18,10 @@ public class HelloServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html; charset=utf-8"); // 이렇게 해야 한글이 나온다.
+		
 		PrintWriter pw = response.getWriter();
-		pw.println("<h1>Hello World<h1>");
+		pw.println("<h1>안녕 세상<h1>");
 	}
 
 
